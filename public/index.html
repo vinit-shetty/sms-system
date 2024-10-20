@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Send SMS</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      border-radius: 5%;
+      width: 600px;
+      height: 350px;
+      background-color: bisque;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px; /* Add space between elements */
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px; /* Add space between form fields */
+    }
+    textarea{
+      border-radius: 10%;
+      height: 100px;
+      width: 200px;
+    }
+    
+    input,button{
+      border-radius: 15%;
+    }
+  
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Send SMS</h1>
+    <form id="smsForm">
+      <label for="to">Recipient Phone Number:</label>
+      <input type="text" id="to" name="to" required>
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" required></textarea>
+      <button type="submit">Send SMS</button>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('smsForm');
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const to = document.getElementById('to').value;
+      const message = document.getElementById('message').value;
+
+      const response = await fetch('/send-sms', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ to, message })
+      });
+
+      const result = await response.text();
+      alert(result);
+    });
+  </script>
+</body>
+</html>
