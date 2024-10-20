@@ -25,6 +25,7 @@ This project is a web-based SMS notification system that allows users to send SM
    `npm install`
 
 4. Create a `.env` file in the root directory with the following content:
+    
    `TWILIO_ACCOUNT_SID=your_twilio_account_sid`
    
    `TWILIO_AUTH_TOKEN=your_twilio_auth_token`
