@@ -33,6 +33,7 @@ This project is a web-based SMS notification system that allows users to send SM
    `TWILIO_PHONE_NUMBER=your_twilio_phone_number`
 
 
+
 6. Start the server:
 `node index.js`
 
