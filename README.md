@@ -16,7 +16,7 @@ This project is a web-based SMS notification system that allows users to send SM
 **To set up and run the project:**
 
 1. Clone the repository:
-   `git clone https://github.com/vinit-shetty/sms-notification-system.git`
+   `git clone https://github.com/vinit-shetty/sms-system.git`
 
 2. Navigate into the project directory:
    `cd sms-notification-system`
